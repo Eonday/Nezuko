@@ -24,7 +24,6 @@ public class Help extends ListenerAdapter{
 	
 	@SuppressWarnings("unchecked")
 	public Help() {
-		System.out.println("ran");
 		jArrayAddAliases(serverInfo);
 		cInfo.put("Description", commandInfo);
 		command.put("Help", cInfo);

@@ -36,7 +36,7 @@ public class JsonWriter {
 	           jsonObjects = (JSONArray)obj;
 	           jsonObjects.add(command);
 	           WriteToJson(jsonObjects);
-	           System.out.println("New array is " + jsonObjects.toString());
+	        
 	          
 	           
 	           
