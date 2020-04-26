@@ -35,11 +35,9 @@ public class JsonParser {
 	
 	@SuppressWarnings("unchecked")
 	public void AddToJsonArray(JSONObject command) {
-		JSONParser parser = new JSONParser();
 		JSONArray jsonObjects = new JSONArray();
 		try {
-	           Object obj = parser.parse(new FileReader(cmdFile));
-	           jsonObjects = (JSONArray)obj;
+	           jsonObjects = ReadCommandList();
 	           jsonObjects.add(command);
 	           write.WriteToJson(jsonObjects);
 	        
@@ -52,7 +50,20 @@ public class JsonParser {
 
 	}
 	
-
+	
+	public JSONArray ReadCommandList() {
+		JSONParser parser = new JSONParser();
+		JSONArray jsonObjects = new JSONArray();
+		try {
+	           Object obj = parser.parse(new FileReader(cmdFile));
+	           jsonObjects = (JSONArray)obj;
+	           return jsonObjects;        
+	        } catch(Exception e) {
+	            e.printStackTrace();
+	        } 
+		return null ;
+	}
+	
 	}
 
 
