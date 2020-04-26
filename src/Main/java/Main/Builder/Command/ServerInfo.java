@@ -9,6 +9,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import Main.Builder.GlobalMsg;
+import Main.Builder.JsonClasses.JsonParser;
 import Main.Builder.JsonClasses.JsonWriter;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Emote;
@@ -21,7 +22,7 @@ public class ServerInfo extends ListenerAdapter {
 
 	
 	//Objects
-	JsonWriter jWrite = new JsonWriter();
+	JsonParser jWrite = new JsonParser();
 	JSONObject cInfo = new JSONObject();
 	JSONObject command = new JSONObject();
 	JSONArray jArray = new JSONArray();
