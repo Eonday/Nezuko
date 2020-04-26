@@ -1,12 +1,9 @@
 package Main.Builder.JsonClasses;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 public class JsonWriter {
 	JSONArray jArray = new JSONArray();
@@ -27,24 +24,8 @@ public class JsonWriter {
 		
 		
 	}
-	@SuppressWarnings("unchecked")
-	public void AddToJsonArray(JSONObject command) {
-		JSONParser parser = new JSONParser();
-		JSONArray jsonObjects = new JSONArray();
-		try {
-	           Object obj = parser.parse(new FileReader(file));
-	           jsonObjects = (JSONArray)obj;
-	           jsonObjects.add(command);
-	           WriteToJson(jsonObjects);
-	        
-	          
-	           
-	           
-	        } catch(Exception e) {
-	            e.printStackTrace();
-	        } 
-
-	}
+	
+	
 	public void ResetFile() {
 		try(FileWriter Writer = new FileWriter(file)){
 			Writer.write(jArray.toString());

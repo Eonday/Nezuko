@@ -4,13 +4,13 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import Main.Builder.GlobalMsg;
-import Main.Builder.JsonClasses.JsonWriter;
+import Main.Builder.JsonClasses.JsonParser;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class Help extends ListenerAdapter{
 	
 	JSONArray commandList = new JSONArray();
-	JsonWriter jWrite = new JsonWriter();
+	JsonParser jWrite = new JsonParser();
 	JSONObject cInfo = new JSONObject();
 	JSONObject command = new JSONObject();
 	JSONArray jArray = new JSONArray();
