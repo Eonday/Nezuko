@@ -64,9 +64,10 @@ public class ServerInfo extends ListenerAdapter {
 		
 		
 		String args  = event.getMessage().getContentRaw();
+		boolean isCmdMsg = gMsg.checkCall(args,serverInfo,prefix,event);
 		
 		
-			if(gMsg.checkCall(args,serverInfo,prefix,event)) {
+			if(isCmdMsg) {
 				//object
 				EmbedBuilder info = new EmbedBuilder();
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
