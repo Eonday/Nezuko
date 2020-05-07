@@ -5,12 +5,13 @@ import org.json.simple.JSONObject;
 
 import Main.Builder.GlobalMsg;
 import Main.Builder.JsonClasses.JsonParser;
+import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class Help extends ListenerAdapter{
 	
 	JSONArray commandList = new JSONArray();
-	JsonParser jWrite = new JsonParser();
+	JsonParser jParse = new JsonParser();
 	JSONObject cInfo = new JSONObject();
 	JSONObject command = new JSONObject();
 	JSONArray jArray = new JSONArray();
@@ -27,7 +28,7 @@ public class Help extends ListenerAdapter{
 		jArrayAddAliases(serverInfo);
 		cInfo.put("Description", commandInfo);
 		command.put("Help", cInfo);
-		jWrite.AddToJsonArray(command);
+		jParse.AddToJsonArray(command);
 	}
 	//Adds the String array to Json Array
 	@SuppressWarnings("unchecked")
@@ -41,7 +42,21 @@ public class Help extends ListenerAdapter{
 		}
 		
 			
-	
+	public void onGuildMessageReceived(GuildMessageReceivedEvent event){
+			
+			
+			
+			String args  = event.getMessage().getContentRaw();
+			boolean isCmdMsg = gMsg.checkCall(args,serverInfo,prefix,event);
+			
+			
+			if(isCmdMsg) {
+				JSONArray commands = jParse.ReadCommandList();
+				int numOfCommands = commands.size();
+				
+			}
+			
+		}
 	
 
 
