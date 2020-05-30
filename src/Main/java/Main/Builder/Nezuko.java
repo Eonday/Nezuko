@@ -11,7 +11,7 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 
-public class Nezuko extends JsonParser{
+public class Nezuko {
 	
 	
 	static JsonParser parser = new JsonParser();
